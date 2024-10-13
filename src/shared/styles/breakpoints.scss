@@ -1,0 +1,29 @@
+@use 'sass:map';
+
+$values: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  xl: 1200px,
+  xxl: 1720px,
+);
+
+@mixin up($bp) {
+  @if map.has-key($values, $bp) {
+    @media (width >= (map.get($values, $bp))) {
+      @content;
+    }
+  } @else {
+    @error "No '#{$bp}' breakpoint. Available breakpoints are: #{map.keys($values)}";
+  }
+}
+
+@mixin down($bp) {
+  @if map.has-key($values, $bp) {
+    @media (width < (map.get($values, $bp))) {
+      @content;
+    }
+  } @else {
+    @error "No '#{$bp}' breakpoint. Available breakpoints are: #{map.keys($values)}";
+  }
+}

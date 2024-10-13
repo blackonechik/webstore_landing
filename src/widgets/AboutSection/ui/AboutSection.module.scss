@@ -1,0 +1,111 @@
+@use '/src/shared/styles/breakpoints.scss';
+@import '/src/shared/styles/colors.scss';
+
+.about {
+	position: relative;
+	z-index: -1;
+	margin: -350px 0;
+	padding: 385px 480px;
+	background-color: $dark-white;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		gap: 80px;
+	}
+
+	&__left {
+		max-width: 448px;
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__text-container {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&__text {
+		margin: 0;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 28.966px;
+	}
+
+	&__title {
+		margin: 0;
+		margin-bottom: 118px;
+		font-family: 'Roboto Slab';
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	@include breakpoints.down('xxl') {
+		padding: 360px 200px;
+	}
+
+	@include breakpoints.down('xl') {
+		padding: 360px 80px;
+
+		&__title {
+			margin-bottom: 50px;
+		}
+
+		&__text-container {
+			gap: 20px;
+		}
+
+		&__right {
+			flex-shrink: 0;
+		}
+
+		&__image {
+			max-height: 300px;
+		}
+
+		&__text {
+			font-size: 18px;
+		}
+
+		&__container {
+			gap: 40px;
+		}
+	}
+
+	@include breakpoints.down('md') {
+		padding: 360px 20px;
+		&__container {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		&__right {
+			flex-direction: row;
+			justify-content: space-around;
+		}
+
+		&__left {
+			max-width: none;
+		}
+
+		&__image {
+			max-height: 300px;
+			max-width: 200px;
+		}
+	}
+
+	@include breakpoints.down('sm') {
+		&__title {
+			margin-bottom: 30px;
+		}
+
+		&__right {
+			flex-wrap: wrap;
+		}
+	}
+}

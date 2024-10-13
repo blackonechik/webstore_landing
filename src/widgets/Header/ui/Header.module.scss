@@ -1,0 +1,81 @@
+@use '/src/shared/styles/breakpoints.scss';
+@import '/src/shared/styles/colors.scss';
+
+.header {
+	padding: 30px 0 10px;
+
+	&__container {
+		max-width: 1920px;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		padding: 0 480px;
+	}
+
+	&__logo {
+		font-size: 40px;
+	}
+
+	&__top {
+		display: flex;
+		gap: 15px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		position: relative;
+		padding-bottom: 20px;
+		margin-bottom: 35px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: 0;
+			background-color: $light-grey;
+		}
+	}
+
+	&__left {
+		display: flex;
+		gap: 35px;
+	}
+
+	@include breakpoints.down('xxl') {
+		&__container {
+			padding: 0 200px;
+		}
+	}
+
+	@include breakpoints.down('xl') {
+		&__container {
+			padding: 0 60px;
+		}
+	}
+
+	@include breakpoints.down('md') {
+
+		&__top {
+			padding-bottom: 18px;
+			margin-bottom: 19px;
+		}
+		&__container {
+			padding: 0 20px;
+		}
+
+		&__left {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+}
+
+.phone {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+
+	&__link {
+		color: $grey-white;
+		font-size: 18px;
+	}
+}

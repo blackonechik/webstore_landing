@@ -1,0 +1,25 @@
+@use '/src/shared/styles/breakpoints.scss';;
+@import '/src/shared/styles/colors.scss';
+
+.button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50px;
+  background-color: transparent ;
+
+  &--primary {
+    color: white;
+    border: 2px solid $magenta;
+    background-color: $magenta;
+  }
+
+  &--secondary { 
+    color: $magenta;
+    border: 2px solid $light-grey;
+  }
+
+  @include breakpoints.down('xl') {
+    font-size: 20px;;
+  }
+}

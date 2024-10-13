@@ -1,0 +1,15 @@
+@import '/src/shared/styles/colors.scss';
+
+.company-name {
+	margin-right: 3px;
+	font-family: 'Roboto Slab';
+	&__first {
+		color: $dark-grey;
+		font-weight: 700;
+	}
+
+	&__second {
+		color: $magenta;
+		font-weight: 400;
+	}
+}

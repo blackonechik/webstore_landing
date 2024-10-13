@@ -1,0 +1,45 @@
+@use '/src/shared/styles/breakpoints.scss';
+
+.nav {
+	&__list {
+		display: flex;
+		gap: 45px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__link {
+		font-size: 12px;
+		font-style: normal;
+		font-weight: bold;
+		letter-spacing: 1.3px;
+		text-transform: uppercase;
+	}
+
+	@include breakpoints.down('xl') {
+		&__list {
+			gap: 30px;
+		}
+
+		&__link {
+			font-size: 18px;
+		}
+	}
+
+	@include breakpoints.down('md') {
+		&__list {
+			justify-content: space-between;
+		}
+	}
+
+	@include breakpoints.down('sm') {
+		&__list {
+			gap: 10px;
+		}
+
+		&__link {
+			font-size: 15px;
+		}
+	}
+}

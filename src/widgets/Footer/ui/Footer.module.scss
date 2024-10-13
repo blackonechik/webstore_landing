@@ -1,0 +1,108 @@
+
+@use '/src/shared/styles/breakpoints.scss';
+@import '/src/shared/styles/colors.scss';
+
+.footer {
+	position: relative;
+	max-width: 1920px;
+	margin: 0 auto;
+
+	&__wrapper {
+		display: flex;
+		align-items: flex-end;
+		min-height: 904px;
+		padding: 0 446px;
+		background-image: url("/assets/background-footer.webp");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		max-width: 1920px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 33px 33px 35px;
+		background-color: white;
+	}
+
+	&__title {
+		&--left {
+			min-width: 68px;
+		}
+	}
+
+	&__email {
+		color: $magenta;
+	}
+
+	&__left,
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__phones {
+		display: flex;
+		flex-direction: column;
+		color: $grey;
+	}
+
+	&__address {
+		display: flex;
+		justify-content: space-between;
+		font-style: normal;
+	}
+
+	&__text-container {
+		display: flex;
+		gap: 8px;
+	}
+
+	&__text {
+		max-width: 335px;
+		color: $grey;
+	}
+
+	&__copyright {
+		margin-top: 4px;
+		color: $grey;
+	}
+
+	@include breakpoints.down('xxl') {
+		&__wrapper {
+			min-height: 750px;
+			padding: 0 180px;
+		}
+	}
+
+	@include breakpoints.down('xl') {
+		&__wrapper {
+			padding: 0;
+		}
+
+		&__container {
+			padding: 30px 20px;
+		}
+	}
+
+	@include breakpoints.down('md') {
+		&__address {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	@include breakpoints.down('sm') {
+		&__address {
+			font-size: 13px;
+		}
+
+		&__text-container {
+			flex-wrap: wrap;
+		}
+	}
+}

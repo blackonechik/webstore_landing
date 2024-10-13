@@ -1,0 +1,95 @@
+@use '/src/shared/styles/breakpoints.scss';
+
+.hero {
+	padding: 0 480px;
+	background-image: url("/assets/background-hero.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&__container {
+		position: relative;
+		z-index: 100;
+		padding: 188px 0 339px;
+	}
+	&__title {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		max-width: 350px;
+		color: white;
+		font-size: 60px;
+		font-weight: 100;
+		line-height: 66px;
+
+		&--primary {
+			font-weight: 700;
+		}
+
+		&--cost {
+			color: #3a3c40;
+			font-size: 100px;
+			font-weight: 700;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		z-index: -1;
+		top: 57px;
+    right: -93px;
+    width: 709px;
+	}
+
+	@media screen and (max-width: 1800px) {
+		&__image {
+			top: 96px;
+			right: -93px;
+			width: 560px;
+		}
+	}
+
+	@include breakpoints.down('xxl') {
+		padding: 0 200px;
+
+		&__container {
+			padding: 159px 0 274px;
+		}
+	}
+
+	@include breakpoints.down('xl') {
+		padding: 0 80px;
+
+		&__container {
+			padding: 78px 0 236px;
+		}
+
+		&__image {
+			right: -22px;
+		}
+	}
+
+	@include breakpoints.down('md') {
+		padding: 0 20px;
+		&__image {
+			display: none;
+		}
+
+		&__container {
+			padding: 80px 0;
+		}
+	}
+
+	@include breakpoints.down('sm') {
+		&__container {
+			padding: 35px 0;
+		}
+		&__title {
+			font-size: 30px;
+			line-height: normal;
+
+			&--cost {
+				font-size: 50px;
+			}
+		}
+	}
+}
